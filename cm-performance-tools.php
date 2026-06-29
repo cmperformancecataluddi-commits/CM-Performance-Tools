@@ -3,7 +3,7 @@
  * Plugin Name: CM Performance Tools
  * Plugin URI: https://www.cmperformancesrls.it
  * Description: Plugin ufficiale di CM Performance.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Mirko Cataluddi
  * Author URI: https://www.cmperformancesrls.it
  * License: GPL2+
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Costanti del plugin
-define( 'CMPT_VERSION', '1.0.1' );
+define( 'CMPT_VERSION', '1.0.2' );
 define( 'CMPT_PATH', plugin_dir_path( __FILE__ ) );
 define( 'CMPT_URL', plugin_dir_url( __FILE__ ) );
 
@@ -25,6 +25,7 @@ $modules = array(
     'includes/class-loader.php',
 
     'includes/class-brand-selector.php',
+    'includes/class-filter-notice.php',
 
     'includes/class-brand-banner.php',
 
