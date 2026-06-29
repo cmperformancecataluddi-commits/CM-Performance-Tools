@@ -38,21 +38,65 @@ class CMPT_Brand_Selector {
 
             <h2>Seleziona la tua auto</h2>
 
-            <div class="cm-brand-grid">
+            <<div class="cm-brand-grid">
 
-                <?php foreach ( $brands as $brand ) : ?>
+    <?php foreach ( $brands as $brand ) : ?>
 
-                    <?php echo $this->brand_card( $brand ); ?>
+        <?php echo $this->brand_card( $brand ); ?>
 
-                <?php endforeach; ?>
+    <?php endforeach; ?>
 
-            </div>
+</div>
 
-        </div>
+<?php $this->render_filter_notice(); ?>
+
+</div>
         <?php
 
     }
+private function render_filter_notice() {
 
+    if ( empty( $_GET['filter_brand-auto'] ) ) {
+        return;
+    }
+
+    $brand = sanitize_text_field(
+        wp_unslash( $_GET['filter_brand-auto'] )
+    );
+
+    $term = get_term_by(
+        'slug',
+        $brand,
+        'pa_brand-auto'
+    );
+
+    if ( ! $term ) {
+        return;
+    }
+
+    ?>
+
+    <div class="cm-filter-notice">
+
+        <strong>
+            ✅ Hai selezionato <?php echo esc_html( $term->name ); ?>
+        </strong>
+
+        <p>
+            Ti stiamo mostrando tutti i cerchi compatibili con questa marca.
+        </p>
+
+        <a class="cm-reset-brand"
+           href="<?php echo esc_url( get_term_link( 'cerchi-in-lega', 'product_cat' ) ); ?>">
+
+            Cambia marca
+
+        </a>
+
+    </div>
+
+    <?php
+}
     private function brand_card( $brand ) {
 
         $upload = wp_upload_dir();
