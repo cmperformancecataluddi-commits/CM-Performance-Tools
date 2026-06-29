@@ -1,0 +1,187 @@
+/* CM Performance Brand Selector */
+.cm-brand-selector{
+
+    max-width:1550px;
+    margin:0 auto 70px;
+    padding:0 20px;
+
+}
+
+.cm-brand-selector h2{
+
+    text-align:center;
+    font-size:48px;
+    font-weight:800;
+    color:#1d1d1d;
+    margin:0 0 45px;
+    line-height:1.15;
+
+}
+
+.cm-brand-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:35px;
+
+}
+
+.cm-brand-card{
+
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:24px;
+    padding:40px 25px;
+
+    text-align:center;
+    text-decoration:none;
+
+    transition:all .35s ease;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.05);
+
+}
+
+.cm-brand-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#e30613;
+
+    box-shadow:0 22px 45px rgba(0,0,0,.13);
+
+}
+
+.cm-brand-logo{
+
+    height:190px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:10px;
+
+}
+
+.cm-brand-logo img{
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:240px;
+    max-height:165px;
+
+    object-fit:contain;
+
+    transition:transform .35s ease;
+
+}
+
+.cm-brand-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.cm-brand-placeholder{
+
+    width:120px;
+    height:120px;
+
+    border-radius:50%;
+
+    background:#f4f4f4;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:60px;
+
+}
+
+.cm-brand-card span{
+
+    display:block;
+
+    margin-top:15px;
+
+    font-size:30px;
+
+    color:#222;
+
+    font-weight:700;
+
+    line-height:1.2;
+
+}
+
+@media(max-width:1400px){
+
+    .cm-brand-grid{
+
+        grid-template-columns:repeat(3,minmax(0,1fr));
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .cm-brand-grid{
+
+        grid-template-columns:repeat(2,minmax(0,1fr));
+
+    }
+
+    .cm-brand-selector h2{
+
+        font-size:38px;
+
+    }
+
+    .cm-brand-logo{
+
+        height:150px;
+
+    }
+
+    .cm-brand-logo img{
+
+        max-width:180px;
+        max-height:120px;
+
+    }
+
+    .cm-brand-card span{
+
+        font-size:22px;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .cm-brand-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .cm-brand-card{
+
+        padding:35px 20px;
+
+    }
+
+    .cm-brand-selector h2{
+
+        font-size:32px;
+
+    }
+
+}

@@ -21,11 +21,19 @@ define( 'CMPT_URL', plugin_dir_url( __FILE__ ) );
 
 // Carica i moduli
 $modules = array(
+
+    'includes/class-loader.php',
+
     'includes/class-brand-selector.php',
+
     'includes/class-brand-banner.php',
+
     'includes/class-auto-scroll.php',
+
     'includes/class-configurator.php',
+
     'includes/helpers.php',
+
 );
 
 foreach ( $modules as $module ) {
